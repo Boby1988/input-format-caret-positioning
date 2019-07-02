@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/input-format-caret-positioning/static/js/main.2f28355d.chunk.js",
+    "main.js.map": "/input-format-caret-positioning/static/js/main.2f28355d.chunk.js.map",
+    "runtime~main.js": "/input-format-caret-positioning/static/js/runtime~main.1b1b50cb.js",
+    "runtime~main.js.map": "/input-format-caret-positioning/static/js/runtime~main.1b1b50cb.js.map",
+    "static/js/2.48feadf9.chunk.js": "/input-format-caret-positioning/static/js/2.48feadf9.chunk.js",
+    "static/js/2.48feadf9.chunk.js.map": "/input-format-caret-positioning/static/js/2.48feadf9.chunk.js.map",
+    "index.html": "/input-format-caret-positioning/index.html",
+    "precache-manifest.dbb9857e839f2dabf52ed3f5dede9fd9.js": "/input-format-caret-positioning/precache-manifest.dbb9857e839f2dabf52ed3f5dede9fd9.js",
+    "service-worker.js": "/input-format-caret-positioning/service-worker.js"
+  }
+}
