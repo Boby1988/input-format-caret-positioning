@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6fee000ead33dee8625cea28a7f36c87",
+    "revision": "0703e81221bb074ce57f6e36946d3682",
     "url": "/input-format-caret-positioning/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/input-format-caret-positioning/static/js/2.48feadf9.chunk.js"
   },
   {
-    "revision": "4398d78d522af1a55367",
-    "url": "/input-format-caret-positioning/static/js/main.2f28355d.chunk.js"
+    "revision": "a41bc4df3a46f4b9422d",
+    "url": "/input-format-caret-positioning/static/js/main.edf5c39c.chunk.js"
   },
   {
     "revision": "75272b474431940b19c2",
