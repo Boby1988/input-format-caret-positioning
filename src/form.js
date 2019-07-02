@@ -6,40 +6,39 @@ const Row = props => (
   <div style={{ marginTop: '0.5em', marginBottom: '1em'}} {...props} />
 )
 
-function caretPositioning(event, value, previousValue, name) {
 
 
+function caretPositioning({ delimiter, re }) {
+  function getRawValue(value) {
+    if(!value) {
+      return ''
+    }
+    if(re) {
+      return value.replace(re, '')
+    }
+    return value
+  }
 
+  return function(event, value, previousValue, name) {
     // positioning
     const element = event.target
     let caret = element.selectionStart
 
-
-
-
     if(previousValue) {
-      const rawValue = value.replace(/[^0-9]/g, '')
-      const rawPreviousValue = previousValue.replace(/[^0-9]/g, '')
+      const pvLength = getRawValue(previousValue).length
+      const vLength = getRawValue(value).length
 
-      const pvLength = rawPreviousValue.length
-      const vLength = rawValue.length
-
-      console.log('caretPositioning', { value, previousValue, caret, pvLength, vLength })
-
-      if(pvLength <= vLength && value.substring(caret, caret + 1) === '-') { // start to type in
-        console.log('ez')
+      if(pvLength <= vLength && value.substring(caret, caret + 1) === delimiter) { // start to type in
         caret = Math.min(caret + 1, value.length)
       }
     }
-
-
 
 
     window.requestAnimationFrame(function() {
       element.selectionStart = caret
       element.selectionEnd = caret
     })
-
+  }
 }
 
 const renderTextField = ({ input, ...rest }) => (
@@ -92,7 +91,7 @@ const MyForm = ({ handleSubmit }) => (
         component={renderTextField}
         name="date"
         normalize={normalizeDate}
-        onChange={caretPositioning}
+        onChange={caretPositioning({ delimiter: '-', re: /[^0-9]/g })}
       />
     </Row>
 
