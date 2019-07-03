@@ -10,8 +10,8 @@ export default function Formatter(opts) {
 
 
   function normalizer(value, previousValue) {
-
-    if(previousValue && previousValue.length > value.length) { // delete
+    // delete
+    if(previousValue && previousValue.length > value.length) {
       return value
     } else {
       return formatter(value)
@@ -34,9 +34,8 @@ export default function Formatter(opts) {
         result += sub;
 
         if (sub.length === length && index < blocks.length - 1) {
-            result += delimiter;
+          result += delimiter;
         }
-
         // update remaining string
         rawValue = rest;
       }
@@ -48,15 +47,10 @@ export default function Formatter(opts) {
     if(!value) {
       return ''
     }
-    if(re) {
-      return value.replace(re, '')
-    }
-    return value
+    return re ? value.replace(re, '') : value
   }
 
   function positioner(event, value, previousValue) {
-    console.log('positioner', event.target.value, value, previousValue, method)
-
       // positioning
     const element = event.target
     let caret = element.selectionStart
@@ -67,15 +61,12 @@ export default function Formatter(opts) {
       const vLength = formattedValue.length
       const searchString = method === 'format' ? formattedValue : value
       const nextChar = searchString.substr(caret, 1)
-      const currChar = searchString.substr(caret-1, 1)
-
-      console.log({ nextChar, currChar, caret, searchString })
+      const currChar = searchString.substr(caret - 1, 1)
 
       if(pvLength <= vLength && (nextChar === delimiter || currChar === delimiter)) {
         caret = Math.min(caret + 1, searchString.length)
       }
     }
-
 
     window.requestAnimationFrame(function() {
       element.selectionStart = caret

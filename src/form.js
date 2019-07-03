@@ -24,8 +24,8 @@ const MyForm = ({ handleSubmit }) => (
     <Row>
       <Field
         component={renderTextField}
-        label="Created at"
-        name="created_at"
+        label="Date (yyyy-mm-dd)"
+        name="date"
         normalize={dateFormatter.normalizer}
         onChange={dateFormatter.positioner}
       />
@@ -34,17 +34,7 @@ const MyForm = ({ handleSubmit }) => (
     <Row>
       <Field
         component={renderTextField}
-        label="Fulfilled at"
-        name="fulfilled_at"
-        normalize={dateFormatter.normalizer}
-        onChange={dateFormatter.positioner}
-      />
-    </Row>
-
-    <Row>
-      <Field
-        component={renderTextField}
-        label="Tax number"
+        label="Tax number (xxxxxxxx-x-xx)"
         name="tax_number"
         format={taxFormatter.formatter}
         normalize={taxFormatter.getRawValue}
