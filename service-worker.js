@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/input-format-caret-positioning/precache-manifest.04e89eac77854eb5b73bcc4d23b160e1.js"
+  "/input-format-caret-positioning/precache-manifest.38c0002e010cd2b6404d6b6b5462b71d.js"
 );
 
 self.addEventListener('message', (event) => {
